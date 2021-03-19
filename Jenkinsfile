@@ -1,17 +1,10 @@
 pipeline {
-  agent {
-    node {
-      label 'v4.4.0'
+    agent { docker 'node:6.3' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'npm --version'
+            }
+        }
     }
-
-  }
-  stages {
-    stage('build') {
-      steps {
-        sh '''npm install
-npm run build'''
-      }
-    }
-
-  }
 }
