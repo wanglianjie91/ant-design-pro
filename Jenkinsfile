@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'production'
+      label 'v4.4.0'
     }
 
   }
